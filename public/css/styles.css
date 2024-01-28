@@ -1,0 +1,53 @@
+body
+{
+    background-color: #DC5F00;
+    overflow-x: hidden;
+    position: absolute; 
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden;
+    z-index: 0;
+}
+
+
+the-homepage 
+{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    width: 100vw; 
+    overflow-x: hidden;
+}
+
+#welcome
+{
+    display: flex; 
+    position: absolute; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;  
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+    width: 500px; 
+    height: 500px; 
+}
+
+/* TODO: PHOTO-CREDITS GO TO nakib https://pics.alphacoders.com/pictures/view/157168 */
+.home-img
+{
+    z-index: 2;
+}
+#eren
+{
+  margin-right: 300px; 
+}
+#reiner
+{
+    margin-left: 300px;     
+}
+
+
+

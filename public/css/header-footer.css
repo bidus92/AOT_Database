@@ -1,0 +1,57 @@
+header, footer
+{
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+    background-color: black;
+    color: #CF0A0A;
+    width: 100vw; 
+    height: 30vh; 
+    position: relative;
+    right: 8px; 
+    bottom: 8px;
+    overflow: hidden;
+    gap: 25px; 
+    font-size: 20pt;
+    font-family: 'Black Ops One', system-ui;
+    z-index: 3; 
+}
+
+footer
+{
+    justify-content: center;
+    height: 15vh; 
+    align-items: flex-end;
+    font-size: 15pt;
+    right: 25px;  
+    top: 1px; 
+    right: 1px; 
+}
+.nav-link
+{
+    padding-right: 15px;
+}
+#title
+{
+    font-family: 'Cloister Black', sans-serif;
+    font-size: 40pt; 
+    margin-bottom: 0px;
+    margin-top: 0px; 
+    padding-left: 50px;
+    margin-right: auto;
+    text-align: center;                       
+}
+
+a{
+    padding-right: 10px;
+}
+
+a:visited
+{
+    color: #CF0A0A;
+}
+
+a:hover
+{
+    color: white; 
+}
