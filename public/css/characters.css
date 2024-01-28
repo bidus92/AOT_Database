@@ -1,0 +1,25 @@
+the-characters
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px; 
+    justify-content: center;
+}
+
+.character
+{
+    
+}
+.character-name
+{
+    font-family: 'Black Ops One', system-ui;
+    text-align: center;
+}
+.characterIMG
+{
+    width: 300px; 
+    height: 300px; 
+    align-self: center;
+}
+

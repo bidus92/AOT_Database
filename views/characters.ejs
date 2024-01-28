@@ -1,0 +1,19 @@
+<%-include("header.ejs")%>
+
+<the-characters>
+    <%for(let x = 0; x < locals.characterList.length; x++){%>
+    <div class="characters">
+        <p class="character-name"><%=locals.characterList[x].name%></p>
+        <%let imgURL = locals.characterList[x].img;%>
+        <%if(locals.characterList[x].img){%>
+            <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
+            <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
+            <%imgURL = imgURL.slice(0, imgURL.length-15);%>
+            <%console.log(imgURL);%>
+            <img class="characterIMG" src="<%=imgURL%>"/>
+        <%}%>
+    </div>
+    <%}%>
+</the-characters>
+
+<%-include("footer.ejs")%>

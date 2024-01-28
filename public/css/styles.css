@@ -24,7 +24,7 @@ the-homepage
 {
     display: flex; 
     position: absolute; 
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 1;  
@@ -33,6 +33,9 @@ the-homepage
     overflow-x: hidden;
     width: 500px; 
     height: 500px; 
+    font-size: 34pt;
+    font-family: 'Cloister Black', sans-serif;
+    text-align: center;
 }
 
 /* TODO: PHOTO-CREDITS GO TO nakib https://pics.alphacoders.com/pictures/view/157168 */
@@ -40,13 +43,14 @@ the-homepage
 {
     z-index: 2;
 }
-#eren
+
+.photo-credit
 {
-  margin-right: 300px; 
-}
-#reiner
-{
-    margin-left: 300px;     
+    align-self: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15pt;
+    margin: 0; 
+    padding: 0; 
 }
 
 
