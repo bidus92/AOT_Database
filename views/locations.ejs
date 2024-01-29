@@ -1,7 +1,40 @@
 <%-include("header.ejs")%>
 
-<locations>
+<div class="page-numbers">
+    <form action="/locations" method="POST">
+        <div class="page-flex">
+        <%for(let x = 1; x <= 2; x++){%>
+            <div>
+                <label id="page-label" for="page">Page</label>
+                <button class="page-button" name="page" type="submit" value="<%=x%>"><%=x%></button>
+            </div>
+        <%}%>
+    </div>
+    </form>
+</div>
 
-</locations>
+
+<the-locations>
+    <%for(let x = 0; x < locals.locationList.length; x++){%>
+        <div class="locations">
+            <p class="location-name"><%=locals.locationList[x].name%></p>
+            <%let imgURL = locals.locationList[x].img;%>
+            <%if(locals.locationList[x].img === "unknown"){%>
+                <b></b>
+                <img class="locationIMG" src="/assets/images/question_mark.jpg" alt="A question mark"/>
+                <p id="mystery-photo">Photo by <a href="https://unsplash.com/@simonesecci?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Simone Secci</a> 
+                    on <a href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                </p>
+            <%}%>
+            <%if(locals.locationList[x].img){%>
+                <b></b>
+                <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
+                <%imgURL = imgURL.slice(0, imgURL.length-15);%>
+                <%//console.log(imgURL);%>
+                <img class="locationIMG" src="<%=imgURL%>" alt="<%=locals.locationList[x].name%>"/>
+            <%}%>
+        </div>
+    <%}%>
+</the-locations>
 
 <%-include("footer.ejs")%>

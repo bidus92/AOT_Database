@@ -1,8 +1,8 @@
-the-characters
+the-locations
 {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-columns: 1fr 1fr  1fr 1fr ;
+    grid-template-columns: 1fr 1fr  1fr 1fr;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
@@ -46,11 +46,12 @@ the-characters
     cursor: pointer;
 }
 
-.characters
+.locations
 {
    display: flex; 
    flex-direction: column;
    justify-content: center;
+   align-items: center;
    background: linear-gradient(315deg, #CF0A0A, black);
    color: black; 
    width: 300px; 
@@ -58,7 +59,7 @@ the-characters
    position: relative; 
 }
 
-.characters::before
+.locations::before
 {
     content: ''; 
     top: 0; 
@@ -69,7 +70,7 @@ the-characters
     height: 100%; 
     background: linear-gradient(315deg, #CF0A0A, black);
 }
-.characters::after
+.locations::after
 {
     content: ''; 
     top: 0; 
@@ -83,20 +84,26 @@ the-characters
 
 }
 
-.characters b
+.locations b
 {
     position: absolute; 
     inset: 6px; 
     background: white;
     z-index: 0; 
 }
-.character-name
+.episode
+{
+    font-family: 'Cloister Black', sans-serif;
+    text-align: center;
+    z-index: 2;
+}
+.location-name
 {
     font-family: 'Black Ops One', system-ui;
     text-align: center;
     z-index: 2; 
 }
-.characterIMG
+.locationIMG
 {
     width: 200px; 
     height: 200px; 
@@ -105,29 +112,14 @@ the-characters
     opacity: 0.6;
 }
 
-.characters:hover
+.locations:hover
 {
     scale: 1.1; 
     cursor: pointer;
     color: white;
 }
 
-.characterIMG:hover
+.locationIMG:hover
 {
     opacity: 1; 
-}
-#mystery-photo
-{
-    z-index: 2; 
-    align-self: center;
-}
-
-#mystery-photo > a:link
-{
-    color: white; 
-}
-
-#mystery-photo > a:hover
-{
-    color: black;
 }

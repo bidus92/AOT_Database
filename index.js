@@ -26,7 +26,6 @@ app.get("/characters", async (req, res)=>
 {
     const response = await axios.get(`https://api.attackontitanapi.com/characters/?page=1`);
     const result = response.data.results;
-    console.log(result);
     res.render("characters.ejs",
     {
        characterList: result
@@ -43,36 +42,55 @@ app.post("/characters", async (req, res)=>
        characterList: result
     }); 
 })
-app.get("/episodes", (req, res)=>
+app.get("/episodes", async (req, res)=>
 {
-    //const response = await axios.get("https://api.attackontitanapi.com/characters/?page=1");
-    //const result = response.data.results;
-    //const theName = result[2].name
-    //console.log(result[2].name);
+    const response = await axios.get("https://api.attackontitanapi.com/episodes/?page=1");
+    const result = response.data.results;
     res.render("episodes.ejs",
     {
-       
+       episodeList: result
     }); 
 });
 
-app.get("/locations", (req, res)=>
+app.post("/episodes", async (req, res)=>
 {
-    //const response = await axios.get("https://api.attackontitanapi.com/characters/?page=1");
-    //const result = response.data.results;
-    //const theName = result[2].name
-    //console.log(result[2].name);
-    res.render("locations.ejs");
+    var page = req.body["page"];
+    const response = await axios.get(`https://api.attackontitanapi.com/episodes/?page=${page}`);
+    const result = response.data.results;
+    res.render("episodes.ejs", 
+    {
+        episodeList: result
+    });
 });
 
-app.get("/organizations", (req, res)=>
+app.get("/locations", async (req, res)=>
 {
-    //const response = await axios.get("https://api.attackontitanapi.com/characters/?page=1");
-    //const result = response.data.results;
-    //const theName = result[2].name
-    //console.log(result[2].name);
+    const response = await axios.get("https://api.attackontitanapi.com/locations/?page=1");
+    const result = response.data.results;
+    res.render("locations.ejs",
+    {
+        locationList: result
+    });
+});
+
+app.post("/locations", async (req, res)=>
+{
+    var page = req.body["page"];
+    const response = await axios.get(`https://api.attackontitanapi.com/locations/?page=${page}`);
+    const result = response.data.results;
+    res.render("locations.ejs", 
+    {
+        locationList: result
+    });
+});
+
+app.get("/organizations", async (req, res)=>
+{
+    const response = await axios.get("https://api.attackontitanapi.com/organizations");
+    const result = response.data.results;
     res.render("organizations.ejs",
     {
-       
+       organizationList: result
     }); 
 });
 
@@ -80,7 +98,6 @@ app.get("/titans", async (req, res)=>
 {
     const response = await axios.get("https://api.attackontitanapi.com/titans/");
     const result = response.data.results;
-    console.log(result);
     res.render("titans.ejs",
     {
        titanList: result

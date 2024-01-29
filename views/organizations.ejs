@@ -1,6 +1,22 @@
 <%-include("header.ejs")%>
-<organizations>
-    
-</organizations>
+<the-organizations>
+    <%for(let x = 0; x < locals.organizationList.length; x++){%>
+        <div class="organizations">
+            <p class="organization-name"><%=locals.organizationList[x].name%></p>
+            <%let imgURL = locals.organizationList[x].img;%>
+            <%if(locals.organizationList[x].img === "unknown"){%>
+                <b></b>
+                <img class="organizationIMG" src="/assets/images/question_mark.jpg" alt="A question mark"/>
+                <p id="mystery-photo">Photo by <a href="https://unsplash.com/@simonesecci?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Simone Secci</a> 
+                    on <a href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                </p>
+            <%}%>
+            <b></b>
+            <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
+            <%imgURL = imgURL.slice(0, imgURL.length-15);%>
+            <img class="organizationIMG" src="<%=imgURL%>" alt="<%=locals.organizationList[x].name%>"/>
+        </div>
+        <%}%>
+</the-organizations>
 
 <%-include("footer.ejs")%>

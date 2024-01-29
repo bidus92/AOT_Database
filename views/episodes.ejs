@@ -1,6 +1,33 @@
 <%-include("header.ejs")%>
-<episodes>
-    
-</episodes>
+<div class="page-numbers">
+    <form action="/episodes" method="POST">
+        <div class="page-flex">
+        <%for(let x = 1; x <= 5; x++){%>
+            <div>
+                <label id="page-label" for="page">Page</label>
+                <button class="page-button" name="page" type="submit" value="<%=x%>"><%=x%></button>
+            </div>
+        <%}%>
+    </div>
+    </form>
+</div>
+
+<the-episodes>
+    <%for(let x = 0; x < locals.episodeList.length; x++){%>
+    <div class="episodes">
+        <p class="episode"><%=locals.episodeList[x].episode%></p>
+        <%let imgURL = locals.episodeList[x].img;%>
+        <%if(locals.episodeList[x].img){%>
+            <b></b>
+            <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
+            <%imgURL = imgURL.slice(0, imgURL.length-15);%>
+            <%//console.log(imgURL);%>
+            <img class="episodeIMG" src="<%=imgURL%>" alt="<%=locals.episodeList[x].name%>"/>
+        <%}%>
+        <p class="episode-name"><%=locals.episodeList[x].name%></p>
+    </div>
+    <%}%>
+
+</the-episodes>
 
 <%-include("footer.ejs")%>
