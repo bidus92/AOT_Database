@@ -1,7 +1,16 @@
 <%-include("header.ejs")%>
 
-<titans>
-    
-</titans>
+    <the-titans>
+        <%for(let x = 0; x < locals.titanList.length; x++){%>
+            <div class="titans">
+                <p class="titan-name"><%=locals.titanList[x].name%></p>
+                <%let imgURL = locals.titanList[x].img;%>
+                <b></b>
+                <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
+                <%imgURL = imgURL.slice(0, imgURL.length-15);%>
+                <img class="titanIMG" src="<%=imgURL%>" alt="<%=locals.titanList[x].name%>"/>
+            </div>
+            <%}%>
+    </the-titans>
 
 <%-include("footer.ejs")%>
