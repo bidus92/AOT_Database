@@ -13,10 +13,10 @@
     </form>
 </div>
 
-
+<form action="/location-database" method="POST">
 <the-locations>
     <%for(let x = 0; x < locals.locationList.length; x++){%>
-        <div class="locations">
+        <button class="data-button" name="id" type="submit" value="<%=locals.locationList[x].id%>"> <div class="locations">
             <p class="location-name"><%=locals.locationList[x].name%></p>
             <%let imgURL = locals.locationList[x].img;%>
             <%if(locals.locationList[x].img === "unknown"){%>
@@ -26,15 +26,15 @@
                     on <a href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
                 </p>
             <%}%>
-            <%if(locals.locationList[x].img){%>
+            <%if(locals.locationList[x].img && locals.locationList[x].img !== "unknown"){%>
                 <b></b>
                 <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
                 <%imgURL = imgURL.slice(0, imgURL.length-15);%>
-                <%//console.log(imgURL);%>
                 <img class="locationIMG" src="<%=imgURL%>" alt="<%=locals.locationList[x].name%>"/>
             <%}%>
-        </div>
+        </div></button>
     <%}%>
 </the-locations>
+</form>
 
 <%-include("footer.ejs")%>

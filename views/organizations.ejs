@@ -1,7 +1,9 @@
 <%-include("header.ejs")%>
+
+<form action="/organization-database" method="POST">
 <the-organizations>
     <%for(let x = 0; x < locals.organizationList.length; x++){%>
-        <div class="organizations">
+        <button class="data-button" name="id" type="submit" value="<%=locals.organizationList[x].id%>"> <div class="organizations">
             <p class="organization-name"><%=locals.organizationList[x].name%></p>
             <%let imgURL = locals.organizationList[x].img;%>
             <%if(locals.organizationList[x].img === "unknown"){%>
@@ -11,12 +13,14 @@
                     on <a href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
                 </p>
             <%}%>
-            <b></b>
-            <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
-            <%imgURL = imgURL.slice(0, imgURL.length-15);%>
-            <img class="organizationIMG" src="<%=imgURL%>" alt="<%=locals.organizationList[x].name%>"/>
-        </div>
+            <%if(locals.organizationList[x].img && locals.organizationList[x].img !== "unknown"){%>
+                <b></b>
+                <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
+                <%imgURL = imgURL.slice(0, imgURL.length-15);%>
+                <img class="organizationIMG" src="<%=imgURL%>" alt="<%=locals.organizationList[x].name%>"/>
+                <%}%>
+        </div></button>
         <%}%>
 </the-organizations>
-
+</form>
 <%-include("footer.ejs")%>

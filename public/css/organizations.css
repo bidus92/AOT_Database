@@ -9,11 +9,18 @@ the-organizations
     padding-left: 45px; 
 } 
 
+the-organizations > button
+{
+    width: 315px; 
+    height: 315px;
+}
+
 .organizations
 {
    display: flex; 
    flex-direction: column;
    justify-content: center;
+   align-items: center;
    background: linear-gradient(315deg, #CF0A0A, black);
    color: black; 
    width: 300px; 

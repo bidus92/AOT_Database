@@ -9,6 +9,12 @@ the-titans
     padding-left: 45px; 
 } 
 
+the-titans > button
+{
+    width: 315px; 
+    height: 315px;
+}
+
 .titans
 {
    display: flex; 

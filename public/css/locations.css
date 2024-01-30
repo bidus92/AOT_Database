@@ -11,6 +11,13 @@ the-locations
 
 } 
 
+the-locations > button
+{
+    width: 315px; 
+    height: 315px;
+}
+
+
 
 .page-flex
 {

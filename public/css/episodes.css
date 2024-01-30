@@ -2,15 +2,20 @@ the-episodes
 {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-columns: 1fr 1fr  1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    gap: 15px;
+    gap: 35px;
     padding-left: 3px;
 
 } 
 
+the-episodes > button
+{
+    width: 315px; 
+    height: 315px;
+}
 
 .page-flex
 {

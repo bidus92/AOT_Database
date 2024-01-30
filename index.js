@@ -21,6 +21,8 @@ app.get("/",async (req, res)=>
     }); 
 });
 
+
+
 //TODO: Utilize Axios to get API information for the website 
 app.get("/characters", async (req, res)=>
 {
@@ -41,7 +43,20 @@ app.post("/characters", async (req, res)=>
     {
        characterList: result
     }); 
-})
+});
+
+
+app.post("/character-database", async (req, res)=>
+{
+    var id = req.body["id"];
+    const response = await axios.get(`https://api.attackontitanapi.com/characters/${id}`);
+    const result = response.data;
+    res.render("data.ejs",
+    {
+       data: result
+    })
+});
+
 app.get("/episodes", async (req, res)=>
 {
     const response = await axios.get("https://api.attackontitanapi.com/episodes/?page=1");
@@ -67,11 +82,13 @@ app.get("/locations", async (req, res)=>
 {
     const response = await axios.get("https://api.attackontitanapi.com/locations/?page=1");
     const result = response.data.results;
+    console.log(result);
     res.render("locations.ejs",
     {
         locationList: result
     });
 });
+
 
 app.post("/locations", async (req, res)=>
 {
@@ -84,6 +101,17 @@ app.post("/locations", async (req, res)=>
     });
 });
 
+app.post("/location-database", async (req, res)=>
+{
+    var id = req.body["id"];
+    const response = await axios.get(`https://api.attackontitanapi.com/locations/${id}`);
+    const result = response.data;
+    res.render("data.ejs",
+    {
+       data: result
+    })
+});
+
 app.get("/organizations", async (req, res)=>
 {
     const response = await axios.get("https://api.attackontitanapi.com/organizations");
@@ -92,6 +120,17 @@ app.get("/organizations", async (req, res)=>
     {
        organizationList: result
     }); 
+});
+
+app.post("/organization-database", async (req, res)=>
+{
+    var id = req.body["id"];
+    const response = await axios.get(`https://api.attackontitanapi.com/organizations/${id}`);
+    const result = response.data;
+    res.render("data.ejs",
+    {
+       data: result
+    })
 });
 
 app.get("/titans", async (req, res)=>
@@ -104,12 +143,25 @@ app.get("/titans", async (req, res)=>
     }); 
 });
 
+app.post("/titan-database", async (req, res)=>
+{
+    var id = req.body["id"];
+    const response = await axios.get(`https://api.attackontitanapi.com/titans/${id}`);
+    const result = response.data;
+    res.render("data.ejs",
+    {
+       data: result
+    })
+});
 
-app.listen(port, (err)=>
+
+
+app.listen(port, (res, err)=>
 {
     if(err)
     {
         console.log(err); 
+        console.log(res.sendStatus(404)); 
     }
     else
     {

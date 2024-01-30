@@ -12,18 +12,18 @@
     </div>
     </form>
 </div>
-<the-characters>
-    <%for(let x = 0; x < locals.characterList.length; x++){%>
-    <div class="characters">
-        <p class="character-name"><%=locals.characterList[x].name%></p>
-        <%if(locals.characterList[x].name === "Lima" || locals.characterList[x].name === "Muller"|| locals.characterList[x].name === "Alois Tybur" || locals.characterList[x].name === "Bruno Tybur" || locals.characterList[x].name === "Rico Tybur" || locals.characterList[x].name === "Marie Dawk"){%>
-            <b></b>
-            <img class="characterIMG" src="/assets/images/question_mark.jpg" alt="A question mark"/>
-            <p id="mystery-photo">Photo by <a href="https://unsplash.com/@simonesecci?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Simone Secci</a> 
-                on <a href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-            </p>
+<form action="/character-database" method="POST">
+<the-characters>  
+        <%for(let x = 0; x < locals.characterList.length; x++){%>
+            <button class="data-button" name="id" type="submit" value="<%=locals.characterList[x].id%>"><div class="characters">
+                <p class="character-name"><%=locals.characterList[x].name%></p>
+                <%if(locals.characterList[x].name === "Lima" || locals.characterList[x].name === "Muller"|| locals.characterList[x].name === "Alois Tybur" || locals.characterList[x].name === "Bruno Tybur" || locals.characterList[x].name === "Rico Tybur" || locals.characterList[x].name === "Marie Dawk"){%>
+                    <b></b>
+                    <img class="characterIMG" src="/assets/images/question_mark.jpg" alt="A question mark"/>
+                    <p id="mystery-photo">Photo by <a href="https://unsplash.com/@simonesecci?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Simone Secci</a> 
+                        on <a href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                    </p>
         <%}%>
-
         <%let imgURL = locals.characterList[x].img;%>
         <%if(locals.characterList[x].name === "Florian Reiss"){%>
             <b></b>
@@ -38,8 +38,8 @@
             <%//console.log(imgURL);%>
             <img class="characterIMG" src="<%=imgURL%>" alt="<%=locals.characterList[x].name%>"/>
             <%}%>
-    </div>
+    </div></button>
     <%}%>
 </the-characters>
-
+</form>
 <%-include("footer.ejs")%>

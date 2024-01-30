@@ -1,0 +1,195 @@
+<%-include("header.ejs")%>
+
+<!--TODO: Replace characterIMG class with base class in styles.css for everything-->
+<the-data>
+    
+    <%let imgURL = locals.data.img%>
+    <%let photoCredit = false;%>
+
+    <%if(locals.data.img === "unknown"){%>
+        <%imgURL= "/assets/images/question_mark.jpg";%>
+        <b></b>
+        <%photoCredit = true;%> 
+    <%}%>
+
+    
+    <%if(locals.data.name === "Lima" || locals.data.name === "Muller"|| 
+    locals.data.name === "Alois Tybur" || locals.data.name === "Bruno Tybur" 
+    || locals.data.name === "Rico Tybur" || locals.data.name === "Marie Dawk"){%>
+        <b></b>
+        <%imgURL="/assets/images/question_mark.jpg"%>
+        <%photoCredit = true;%> 
+    <%}%>
+
+    <%if(locals.data.name === "Florian Reiss"){%>
+        <b></b>
+        <%imgURL = imgURL.replace("revision/latest?cb=", "")%>
+        <%imgURL = imgURL.slice(0, imgURL.length-15);%>
+    <%}%>
+
+
+    <%if(locals.data.img && locals.data.name !== "Florian Reiss" && locals.data.name !== "Muller" 
+    && locals.data.name !== "Hizuru" && locals.data.name !== "Industrial City" 
+    && locals.data.name !== "Jinae" && locals.data.name !== "Karifa" 
+    && locals.data.name !== "Krolva District" && locals.data.name !== "Lakua" && locals.data.name !== "Reeves Company"
+    && locals.data.name !== "Titan Biology Research Society"){%>
+        <b></b>
+        <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
+        <%imgURL = imgURL.slice(0, imgURL.length-15);%>
+    <%}%>
+
+    <div class="data-image-flex-container">
+        <div>
+            <img class="data-image" src="<%=imgURL%>" alt ="<%=locals.data.name%>"/>
+        </div>
+        <%if(photoCredit){%>
+        <div>
+            <p class="data-photo-credit">Photo by <a href="https://unsplash.com/@simonesecci?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Simone Secci</a> 
+                on <a href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+            </p>
+        </div>
+        <%}%>
+    </div>  
+
+    <ul class="database-information">
+        <li>
+            <h2 class="data-category">Name:</h2> 
+            <p><%=locals.data.name%></p>
+        </li>
+
+        <%if(locals.data.age){%>
+            <li>
+                <h2 class="data-category">Age: </h2>
+                <p><%=locals.data.age%></p>
+            </li>
+        <%}%>
+        <%if(locals.data.birthplace){%>
+            <li>
+                <h2 class="data-category">Birthplace:</h2>
+                <p><%=locals.data.birthplace%></p>
+            </li>
+        <%}%>
+
+        <%if(locals.data.height){%>
+            <li>
+                <h2 class="data-category">Height:</h2>
+                <p><%=locals.data.height%></p>
+            </li>
+            <%}%>
+
+        <%if(locals.data.gender){%>
+            <li>
+                <h2 class="data-category">Gender: </h2>
+                <p><%=locals.data.gender%></p>
+            </li>
+        <%}%>
+
+        <%if(locals.data.alias){%>
+        <li>
+            <h2 class="data-category">Alias:</h2> 
+            <ul>
+                <%for(let x = 0; x < locals.data.alias.length; x++){%>
+                <li><p><%=locals.data.alias[x]%></p></li> 
+                <%}%>
+                <%if(locals.data.alias.length === 0){%>
+                    <li><p>No known aliases</p></li>
+                    <%}%>
+            </ul>
+        </li>
+        <%}%>
+
+        <%if(locals.data.species){%>
+            <li>
+                <h2 class="data-category">Species:</h2> 
+                <ul>
+                    <%for(let x = 0; x < locals.data.species.length; x++){%>
+                        <li><p><%=locals.data.species[x]%></p></li> 
+                        <%}%>
+                </ul>
+            </li>
+        <%}%>
+
+        <%if(locals.data.groups){%>
+            <li>
+                <h2 class="data-category">Groups: </h2> 
+                <ul>
+                    <%for(let x = 0; x < locals.data.groups.length; x++){%>
+                        <li><p><%=locals.data.groups[x].name%></p></li> 
+                        <%}%>
+                        <%if(locals.data.groups.length === 0){%>
+                            <li><p>No known groups of note</p></li>
+                            <%}%>
+                </ul>
+            </li>
+        <%}%>
+
+        <%if(locals.data.roles){%>
+            <li>
+                <h2 class="data-category">Roles: </h2> 
+                <ul>
+                    <%for(let x = 0; x < locals.data.roles.length; x++){%>
+                        <li><p><%=locals.data.roles[x]%></p></li> 
+                        <%}%>
+                        <%if(locals.data.roles.length === 0){%>
+                            <li><p>unknown</p></li>
+                            <%}%>
+                </ul>
+            </li>
+        <%}%>
+
+        <%if(locals.data.territory){%>
+            <li>
+                <h2 class="data-category">Territory:</h2>
+                <p><%=locals.data.territory%></p>
+            </li>
+        <%}%>
+
+        <%if(locals.data.region){%>
+            <li>
+                <h2 class="data-category">Region:</h2>
+                <p><%=locals.data.region%></p>
+            </li>
+        <%}%>
+
+        <%if(locals.data.occupations){%>
+            <li>
+                <h2 class="data-category">Occupations: </h2> 
+                <ul>
+                    <%for(let x = 0; x < locals.data.occupations.length; x++){%>
+                        <li><p><%=locals.data.occupations[x]%></p></li> 
+                        <%}%>
+                        <%if(locals.data.occupations.length === 0){%>
+                            <li><p>Specific Occupations Not Known</p></li>
+                            <%}%>
+                </ul>
+            </li>
+        <%}%>
+        <%if(locals.data.affiliation){%>
+            <li>
+                <h2 class="data-category">Affiliation:</h2>
+                <p><%=locals.data.affiliation%></p>
+            </li>
+        <%}%>
+        <%if(locals.data.abilities){%>
+            <li>
+                <h2 class="data-category">Abilities: </h2> 
+                <ul>
+                    <%for(let x = 0; x < locals.data.abilities.length; x++){%>
+                        <li><p><%=locals.data.abilities[x]%></p></li> 
+                        <%}%>
+                        <%if(locals.data.abilities.length === 0){%>
+                            <li><p>No threatening abilities of note</p></li>
+                        <%}%>
+                </ul>
+            </li>
+        <%}%>
+        
+    </ul>
+
+</the-data>
+
+
+
+
+
+<%-include("footer.ejs")%>
