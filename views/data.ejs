@@ -51,6 +51,7 @@
         <%}%>
     </div>  
 
+   
     <ul class="database-information">
         <li>
             <h2 class="data-category">Name:</h2> 
@@ -115,13 +116,18 @@
                 <ul>
                     <%for(let x = 0; x < locals.data.groups.length; x++){%>
                         <li><p><%=locals.data.groups[x].name%></p></li> 
-                        <%}%>
-                        <%if(locals.data.groups.length === 0){%>
+                        <ul>Sub-Groups: 
+                            <li><%=locals.data.groups[x].sub_groups%></li>
+                        </ul>
+                    <%}%>    
+                    <%if(locals.data.groups.length === 0){%>
                             <li><p>No known groups of note</p></li>
-                            <%}%>
+                    <%}%>
+        
                 </ul>
             </li>
         <%}%>
+
 
         <%if(locals.data.roles){%>
             <li>
@@ -137,12 +143,15 @@
             </li>
         <%}%>
 
+
+
         <%if(locals.data.territory){%>
             <li>
                 <h2 class="data-category">Territory:</h2>
                 <p><%=locals.data.territory%></p>
             </li>
         <%}%>
+
 
         <%if(locals.data.region){%>
             <li>
@@ -164,6 +173,29 @@
                 </ul>
             </li>
         <%}%>
+
+        <%if(locals.data.notable_inhabitants){%>
+            <li>
+                <h2 class="data-category">Notable Inhabitants: </h2> 
+                <ul>
+                    <form action="/character-database" method="POST">  
+                    <%for(let x = 0; x < locals.data.notable_inhabitants.length; x++){%>
+                        <%if(/\d/.test(locals.data.notable_inhabitants[x])){%>
+                            <%var id = locals.data.notable_inhabitants[x].replace(/\D/g, '')%>
+                            <li><button class="data-button notable-inhabitants" type="submit" name="id" value="<%=id%>"><%=locals.notable_inhabitants[x]%></button></li>
+                        <%}%>
+                        <%if(!/\d/.test(locals.data.notable_inhabitants[x])){%>
+                            <li class="notable-inhabitants"><%=locals.data.notable_inhabitants[x]%></li>
+                            <%}%> 
+                    <%}%>
+                        </form>
+                        <%if(locals.data.notable_inhabitants.length === 0){%>
+                            <li class="notable-inhabitants"><p>No notable inhabitants</p></li>
+                        <%}%>
+                </ul>
+            </li>
+        <%}%>
+
         <%if(locals.data.affiliation){%>
             <li>
                 <h2 class="data-category">Affiliation:</h2>
@@ -183,7 +215,34 @@
                 </ul>
             </li>
         <%}%>
-        
+
+
+        <%if(locals.data.current_inheritor){%>
+            <li>
+                <h2 class="data-category">Current Inheritor:</h2>
+                <form action="/character-database" method="POST">
+                    <%var id = locals.data.current_inheritor.replace(/\D/g, '') %>
+                    <button class="data-button current-inheritor" type="submit" name="id" value="<%=id%>"><p><%=locals.current_inheritor%></p></button>
+                </form>
+            </li>
+        <%}%>
+
+        <%if(locals.data.former_inheritors){%>
+            <li>
+                <h2 class="data-category">Former Inheritors: </h2> 
+                <ul>
+                    <form action="/character-database" id="current-inheritor-form" method="POST">
+                    <%for(let x = 0; x < locals.former_inheritors.length; x++){%>
+                        <%var id = locals.data.former_inheritors[x].replace(/\D/g, '') %>
+                        <li><button class="data-button former-inheritor" type="submit" name="id" value="<%=id%>"><p><%=locals.former_inheritors[x]%></button></li> 
+                        <%}%>
+                        </form>
+                    <%if(locals.former_inheritors.length === 0){%>
+                        <li><p>Former inheritors not known</p></li>
+                    <%}%>
+                </ul>
+            </li>
+        <%}%>
     </ul>
 
 </the-data>

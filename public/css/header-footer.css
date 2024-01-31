@@ -20,12 +20,12 @@ header, footer
 footer
 {
     justify-content: center;
+    align-self: center;
     align-items: flex-end;
-    font-size: 15pt;
-    right: 25px;  
+    font-size: 15pt; 
     top: 1px; 
-    right: 1px; 
     margin-top: auto; 
+    margin-right: auto; 
 }
 .nav-link
 {

@@ -12,7 +12,8 @@
     </div>
     </form>
 </div>
-<form action="/character-database" method="POST">
+
+<form action="/character-database" id="character-database" method="POST">
 <the-characters>  
         <%for(let x = 0; x < locals.characterList.length; x++){%>
             <button class="data-button" name="id" type="submit" value="<%=locals.characterList[x].id%>"><div class="characters">

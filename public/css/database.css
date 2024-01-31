@@ -8,12 +8,6 @@ the-data
     align-items: center;
 }
 
-h2
-{
-    margin: 0; 
-    padding: 0; 
-    font-size: 25pt;
-}
 .data-image-flex-container
 {
     grid-area: 1/1/1/1;
@@ -58,6 +52,27 @@ ul
     padding: 0; 
 }
 
+.data-button
+{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+the-data .data-button:hover
+{
+    scale: 1.1;
+    background-color: white;  
+}
+.current-inheritor, .former-inheritor, .notable-inhabitants
+{
+    font-size: 17pt;
+    font-family: 'Cloister Black', sans-serif;
+}
 
 .database-information > li{
     display: flex; 
@@ -71,10 +86,16 @@ ul
 {
     margin: 0; 
     padding: 0; 
-    font-size: 17pt;
+    font-size: 20pt;
+    font-family: 'Cloister Black', sans-serif;
 }
+
 
 .data-category
 {
+    font-family: 'Black Ops One', system-ui;
     align-self:  baseline;
+    margin: 0; 
+    padding: 0; 
+    font-size: 25pt;
 }
