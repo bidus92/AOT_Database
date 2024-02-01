@@ -6,15 +6,17 @@ the-episodes
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    gap: 35px;
-    padding-left: 3px;
+    gap: 15px;
+    position:relative;
+    right: 15px; 
+    bottom: 10px;
 
 } 
 
 the-episodes > button
 {
-    width: 315px; 
-    height: 315px;
+    width: minmax(150px, 315px); 
+    height: minmax(150px, 315px);
 }
 
 .page-flex

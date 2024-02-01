@@ -7,13 +7,14 @@ the-characters
     align-items: center;
     box-sizing: border-box;
     gap: 35px;
-    padding-left: 3px;
-
+    padding-right: 50px;
+    position: relative;
+    bottom: 40px; 
 } 
 the-characters > button
 {
-    width: 315px; 
-    height: 315px;
+    width: 280px; 
+    height: 280px;
 }
 
 
@@ -61,7 +62,7 @@ the-characters > button
    color: black; 
    width: 300px; 
    height: 300px; 
-   position: relative; 
+   position: relative;
 }
 
 .characters::before

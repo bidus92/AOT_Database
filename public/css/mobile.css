@@ -1,0 +1,31 @@
+
+/*Mobile functionality: */
+@media(max-width: 430px)
+{
+    header, footer 
+    {
+        font-size: 12pt;
+        gap: 5px;
+    }
+    #welcome
+    {
+        width: 300px; 
+        height: 300px;
+        font-size: 10pt;
+        margin-right: 80px; 
+    }
+
+ 
+    #eren
+    {
+        transform: translateY(-150px) translateX(200px);
+        clip-path: inset(60px 180px 0px 0px); 
+        object-fit: cover;
+        
+    }
+    #reiner
+    {
+        transform: translateY(-150px) translateX(-250px);
+        clip-path: inset(60px 0px 0px 250px); 
+    }
+}

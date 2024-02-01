@@ -161,39 +161,51 @@
         <%}%>
 
         <%if(locals.data.occupations){%>
+        <div class="main-data-item-flex-container">
             <li>
-                <h2 class="data-category">Occupations: </h2> 
-                <ul>
-                    <%for(let x = 0; x < locals.data.occupations.length; x++){%>
-                        <li><p><%=locals.data.occupations[x]%></p></li> 
-                        <%}%>
-                        <%if(locals.data.occupations.length === 0){%>
-                            <li><p>Specific Occupations Not Known</p></li>
+                <div>
+                    <h2 class="data-category">Occupations: </h2> 
+                </div>
+                <div>
+                    <ul>
+                        <%for(let x = 0; x < locals.data.occupations.length; x++){%>
+                            <li><p><%=locals.data.occupations[x]%></p></li> 
                             <%}%>
-                </ul>
+                            <%if(locals.data.occupations.length === 0){%>
+                                <li><p>Specific Occupations Not Known</p></li>
+                                <%}%>
+                    </ul>
+                </div>
             </li>
+        </div>
         <%}%>
 
         <%if(locals.data.notable_inhabitants){%>
+            <div class="main-data-item-flex-container">
             <li>
+                <div>
                 <h2 class="data-category">Notable Inhabitants: </h2> 
-                <ul>
-                    <form action="/character-database" method="POST">  
-                    <%for(let x = 0; x < locals.data.notable_inhabitants.length; x++){%>
-                        <%if(/\d/.test(locals.data.notable_inhabitants[x])){%>
-                            <%var id = locals.data.notable_inhabitants[x].replace(/\D/g, '')%>
-                            <li><button class="data-button notable-inhabitants" type="submit" name="id" value="<%=id%>"><%=locals.notable_inhabitants[x]%></button></li>
+                </div>
+                
+                <div>
+                    <ul>
+                        <form action="/character-database" method="POST">  
+                        <%for(let x = 0; x < locals.data.notable_inhabitants.length; x++){%>
+                            <%if(/\d/.test(locals.data.notable_inhabitants[x])){%>
+                                <%var id = locals.data.notable_inhabitants[x].replace(/\D/g, '')%>
+                                <li><button class="data-button notable-inhabitants" type="submit" name="id" value="<%=id%>"><%=locals.notable_inhabitants[x]%></button></li>
+                            <%}%>
+                            <%if(!/\d/.test(locals.data.notable_inhabitants[x])){%>
+                                <li class=" notable-inhabitants"><%=locals.data.notable_inhabitants[x]%></li>
+                                <%}%> 
                         <%}%>
-                        <%if(!/\d/.test(locals.data.notable_inhabitants[x])){%>
-                            <li class="notable-inhabitants"><%=locals.data.notable_inhabitants[x]%></li>
-                            <%}%> 
-                    <%}%>
-                        </form>
-                        <%if(locals.data.notable_inhabitants.length === 0){%>
-                            <li class="notable-inhabitants"><p>No notable inhabitants</p></li>
-                        <%}%>
-                </ul>
+                            </form>
+                            <%if(locals.data.notable_inhabitants.length === 0){%>
+                                <li class="notable-inhabitants"><p>No notable inhabitants</p></li>
+                            <%}%>
+                    </ul></div>
             </li>
+        </div>
         <%}%>
 
         <%if(locals.data.affiliation){%>
@@ -243,6 +255,37 @@
                 </ul>
             </li>
         <%}%>
+
+        <%if(locals.data.notable_members){%>
+            <li>
+            <div class="main-data-item-flex-container">
+                <div>
+                    <h2 class="data-category">Notable Members: </h2> 
+                </div>
+                <ul>
+                    <form action="/character-database" method="POST">  
+                <div>
+                    <%for(let x = 0; x < locals.data.notable_members.length; x++){%>
+                        <%if(/\d/.test(locals.data.notable_members[x])){%>
+                            <%var id = locals.data.notable_members[x].replace(/\D/g, '')%>
+                            <li><button class="data-button notable-inhabitants" type="submit" name="id" value="<%=id%>"><%=locals.notable_members[x]%></button></li>
+                        <%}%>
+                        <%if(!/\d/.test(locals.data.notable_members[x])){%>
+                            <li class="notable-inhabitants"><%=locals.data.notable_members[x]%></li>
+                            <%}%> 
+                    <%}%>
+                        </form>
+                        <%if(locals.data.notable_members.length === 0){%>
+                            <li class="notable-inhabitants"><p>No notable inhabitants</p></li>
+                        <%}%>
+                </div>
+                </ul>
+            </div>
+            </li>
+        <%}%>
+
+
+        
     </ul>
 
 </the-data>

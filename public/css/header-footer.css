@@ -26,6 +26,7 @@ footer
     top: 1px; 
     margin-top: auto; 
     margin-right: auto; 
+    height: 10vh;
 }
 .nav-link
 {

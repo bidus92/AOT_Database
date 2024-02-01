@@ -132,7 +132,6 @@ app.get("/location-database", async (req, res)=>
     }
     
     const result = response.data;
-    console.log(id); 
 
     res.render("data.ejs",
     {
@@ -149,7 +148,6 @@ app.post("/location-database", async (req, res)=>
     const result = response.data;
     var notable_inhabitants = [];
     var names = [];
-    console.log(response.data.notable_inhabitants); 
     for(let x = 0; x < response.data.notable_inhabitants.length; x++)
     {
         //Checks to see if there are numbers in the notable inhabitants, indicating a url to get information from the api from
@@ -184,6 +182,62 @@ app.get("/organizations", async (req, res)=>
     }); 
 });
 
+
+//GET to link location database with character database where inheritors are referenced
+app.get("/organization-database", async (req, res)=>
+{
+    var id;
+    if(req.body["id"])
+    {
+        const response = await axios.get(`https://api.attackontitanapi.com/characters/${id}`);
+        id = req.body["id"];
+    }
+    else
+    {
+        id = req.body["epID"]
+        const response = await axios.get(`https://api.attackontitanapi.com/episodes/${id}`);
+    }
+    
+    const result = response.data;
+
+    res.render("data.ejs",
+    {
+       data: result
+    });
+   
+});
+
+//POST to get information from organizations page to get appropriate information for individual organizations
+app.post("/organization-database", async (req, res)=>
+{
+    var id = req.body["id"];
+    const response = await axios.get(`https://api.attackontitanapi.com/organizations/${id}`);
+    const result = response.data;
+    var notable_members = [];
+    var names = [];
+    for(let x = 0; x < response.data.notable_members.length; x++)
+    {
+        //Checks to see if there are numbers in the notable inhabitants, indicating a url to get information from the api from
+        if(/\d/.test(response.data.notable_members[x]))
+        {
+            notable_members.push(await axios.get(`${response.data.notable_members[x]}`))
+            names.push(notable_members[x].data.name);
+        }
+        //otherwise post string as is
+        else
+        {
+            notable_members.push(response.data.notable_members[x]);
+            names.push(notable_members[x]);
+        }
+        
+    }
+    res.render("data.ejs",
+    {
+       data: result,
+       notable_members: names
+    })
+});
+
 //POST to send information from organizations page to get appropriate information for individual organizations
 app.post("/organization-database", async (req, res)=>
 {
@@ -214,7 +268,6 @@ app.get("/titan-database", async (req, res)=>
     var id = req.body["id"];
     const response = await axios.get(`https://api.attackontitanapi.com/characters/${id}`);
     const result = response.data;
-    console.log(id); 
     res.render("data.ejs",
     {
        data: result

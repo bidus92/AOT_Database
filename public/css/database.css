@@ -6,6 +6,7 @@ the-data
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
+    gap: 60px; 
 }
 
 .data-image-flex-container
@@ -17,6 +18,18 @@ the-data
     justify-content: center;
     align-items: center;
 }
+
+.main-data-item-flex-container
+{
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
 
 .data-image
 {
@@ -42,7 +55,6 @@ the-data
 .database-information
 {
     grid-area: 1/2/1/2; 
-    width: 90%;
 }
 
 ul
@@ -51,6 +63,7 @@ ul
     margin: 0;
     padding: 0; 
 }
+
 
 .data-button
 {
@@ -61,12 +74,13 @@ ul
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+    text-align: left;
 }
 
 the-data .data-button:hover
 {
     scale: 1.1;
-    background-color: white;  
+    color: white;  
 }
 .current-inheritor, .former-inheritor, .notable-inhabitants
 {

@@ -6,15 +6,17 @@ the-locations
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    gap: 15px;
-    padding-left: 3px;
+    gap: 35px;
+    position: relative; 
+    right: 28px; 
+    bottom: 35px; 
 
 } 
 
 the-locations > button
 {
-    width: 315px; 
-    height: 315px;
+    width: 280px; 
+    height: 280px;
 }
 
 
