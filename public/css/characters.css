@@ -2,19 +2,19 @@ the-characters
 {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-columns: 1fr 1fr  1fr 1fr ;
+    grid-template-columns: 23% 23% 23% 23%;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     gap: 35px;
     padding-right: 50px;
     position: relative;
-    bottom: 40px; 
+    bottom: 40px;
 } 
 the-characters > button
 {
-    width: 280px; 
-    height: 280px;
+    width: 300px; 
+    height: 300px;
 }
 
 
@@ -58,6 +58,7 @@ the-characters > button
    display: flex; 
    flex-direction: column;
    justify-content: center;
+   align-items: center;
    background: linear-gradient(315deg, #CF0A0A, black);
    color: black; 
    width: 300px; 

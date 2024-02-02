@@ -8,15 +8,50 @@ header, footer
     width: 100vw; 
     height: 15vh; 
     position: relative;
-    right: 8px; 
     bottom: 8px;
-    overflow: hidden;
     gap: 25px; 
     font-size: 17pt;
     font-family: 'Black Ops One', system-ui;
     z-index: 3; 
 }
+#menu-icon, #menu-icon-img
+{
+    visibility: hidden;
+}
+#dropdown-menu-flex
+{
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    visibility: hidden;
+    position: relative;
+    align-self: flex-end;
+    left: 70px; 
+}
+#dropdown-menu
+{
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: black;
+    align-self: last-baseline;
+    position: absolute; 
+    visibility: hidden;
+    text-align: left; 
+    gap: 10px; 
+    top: 12px; 
+}
 
+#dropdown-menu > div
+{
+    width: auto;  
+    height: auto; 
+    z-index: 3;
+    background-color: white;
+    align-self: center
+}
 footer
 {
     justify-content: center;

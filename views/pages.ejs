@@ -1,0 +1,12 @@
+<the-pages>
+    <form action="/characters" method="POST">
+        <div class="page-flex">
+            <%for(let x = 1; x <= 11; x++){%>
+                <div>
+                    <label id="page-label" for="page">Page</label>
+                    <button class="page-button" name="page" type="submit" value="<%=x%>"><%=x%></button>
+                </div>
+            <%}%>
+        </div>
+    </form>
+</the-pages>

@@ -55,6 +55,7 @@ the-data
 .database-information
 {
     grid-area: 1/2/1/2; 
+    width: 95%;
 }
 
 ul

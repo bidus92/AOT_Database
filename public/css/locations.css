@@ -2,7 +2,7 @@ the-locations
 {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-columns: 1fr 1fr  1fr 1fr;
+    grid-template-columns: 23% 23% 23% 23%;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;

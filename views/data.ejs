@@ -216,43 +216,59 @@
         <%}%>
         <%if(locals.data.abilities){%>
             <li>
-                <h2 class="data-category">Abilities: </h2> 
-                <ul>
-                    <%for(let x = 0; x < locals.data.abilities.length; x++){%>
-                        <li><p><%=locals.data.abilities[x]%></p></li> 
-                        <%}%>
-                        <%if(locals.data.abilities.length === 0){%>
-                            <li><p>No threatening abilities of note</p></li>
-                        <%}%>
-                </ul>
+                <div class="main-data-item-flex-container">
+                    <div>
+                        <h2 class="data-category">Abilities: </h2> 
+                    </div>
+                    <ul>
+                        <div>
+                            <%for(let x = 0; x < locals.data.abilities.length; x++){%>
+                                <li><p><%=locals.data.abilities[x]%></p></li> 
+                                <%}%>
+                                <%if(locals.data.abilities.length === 0){%>
+                                    <li><p>No threatening abilities of note</p></li>
+                                <%}%>
+                        </div>
+                    </ul>
+                </div>
             </li>
         <%}%>
 
 
         <%if(locals.data.current_inheritor){%>
             <li>
-                <h2 class="data-category">Current Inheritor:</h2>
-                <form action="/character-database" method="POST">
-                    <%var id = locals.data.current_inheritor.replace(/\D/g, '') %>
-                    <button class="data-button current-inheritor" type="submit" name="id" value="<%=id%>"><p><%=locals.current_inheritor%></p></button>
-                </form>
+                <div class="main-data-item-flex-container">
+                    <div>
+                        <h2 class="data-category">Current Inheritor:</h2>
+                    </div>
+                    <form action="/character-database" method="POST">
+                        <%var id = locals.data.current_inheritor.replace(/\D/g, '') %>
+                        <button class="data-button current-inheritor" type="submit" name="id" value="<%=id%>"><p><%=locals.current_inheritor%></p></button>
+                    </form>
+                </div>
             </li>
         <%}%>
 
         <%if(locals.data.former_inheritors){%>
             <li>
-                <h2 class="data-category">Former Inheritors: </h2> 
-                <ul>
-                    <form action="/character-database" id="current-inheritor-form" method="POST">
-                    <%for(let x = 0; x < locals.former_inheritors.length; x++){%>
-                        <%var id = locals.data.former_inheritors[x].replace(/\D/g, '') %>
-                        <li><button class="data-button former-inheritor" type="submit" name="id" value="<%=id%>"><p><%=locals.former_inheritors[x]%></button></li> 
-                        <%}%>
-                        </form>
-                    <%if(locals.former_inheritors.length === 0){%>
-                        <li><p>Former inheritors not known</p></li>
-                    <%}%>
-                </ul>
+                <div class="main-data-item-flex-container">
+                    <div>
+                        <h2 class="data-category">Former Inheritors: </h2> 
+                    </div>
+                    <ul>
+                        <form action="/character-database" id="current-inheritor-form" method="POST">
+                        <div>
+                            <%for(let x = 0; x < locals.former_inheritors.length; x++){%>
+                                <%var id = locals.data.former_inheritors[x].replace(/\D/g, '') %>
+                                <li><button class="data-button former-inheritor" type="submit" name="id" value="<%=id%>"><p><%=locals.former_inheritors[x]%></button></li> 
+                                <%}%>
+                                </form>
+                            <%if(locals.former_inheritors.length === 0){%>
+                                <li><p>Former inheritors not known</p></li>
+                            <%}%>
+                        </div>
+                    </ul>
+                </div>
             </li>
         <%}%>
 
