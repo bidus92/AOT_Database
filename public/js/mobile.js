@@ -4,7 +4,7 @@ const menuImg = document.querySelector("#menu-icon-img");
 const dropdownMenu = document.querySelector("#dropdown-menu");
 const menuItems = document.querySelectorAll("#dropdown-menu > div");
 var windowWidth = screen.availWidth; 
-if(windowWidth <= 430)
+if(windowWidth <= 620)
 {
     menuImg.addEventListener("click", ()=>
     {

@@ -17,13 +17,21 @@
 <the-characters>  
         <%for(let x = 0; x < locals.characterList.length; x++){%>
             <button class="data-button" name="id" type="submit" value="<%=locals.characterList[x].id%>"><div class="characters">
-                <p class="character-name"><%=locals.characterList[x].name%></p>
+                <div class="character-name">
+                    <p><%=locals.characterList[x].name%></p>
+                </div>
                 <%if(locals.characterList[x].name === "Lima" || locals.characterList[x].name === "Muller"|| locals.characterList[x].name === "Alois Tybur" || locals.characterList[x].name === "Bruno Tybur" || locals.characterList[x].name === "Rico Tybur" || locals.characterList[x].name === "Marie Dawk"){%>
-                    <b></b>
-                    <img class="characterIMG" src="/assets/images/question_mark.jpg" alt="A question mark"/>
-                    <p id="mystery-photo">Photo by <a href="https://unsplash.com/@simonesecci?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Simone Secci</a> 
-                        on <a href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-                    </p>
+                    <div>
+                        <b></b>
+                    </div>
+                    <div class="mystery-photo">
+                        <img class="characterIMG" src="/assets/images/question_mark.jpg" alt="A question mark"/>
+                    </div>
+                    <div class="mystery-photo">
+                        <p>Photo by <a class="mystery-photo-link" href="https://unsplash.com/@simonesecci?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Simone Secci</a> 
+                            on <a class="mystery-photo-link" href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                        </p>
+                    </div>
         <%}%>
         <%let imgURL = locals.characterList[x].img;%>
         <%if(locals.characterList[x].name === "Florian Reiss"){%>

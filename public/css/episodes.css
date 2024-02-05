@@ -2,56 +2,23 @@ the-episodes
 {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-columns: 22% 22% 22% 22%;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     gap: 35px;
     position:relative;
-    right: 15px; 
+    right: 5px; 
     bottom: 10px;
 
 } 
 
 the-episodes > button
 {
-    width: minmax(150px, 315px); 
-    height: minmax(150px, 315px);
+    max-width: 315px; 
+    max-height: 315px; 
 }
 
-.page-flex
-{
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 0px; 
-    padding: 0px; 
-    gap: 30px; 
-    margin-bottom: 100px;
-}
-.page-flex > div
-{
-    font-family: 'Cloister Black', sans-serif;
-    background-color: black;
-    color: #CF0A0A;
-    align-items: center;
-    text-align: center;
-}
-.page-flex > div:hover
-{
-    scale: 1.1; 
-}
-
-.page-button
-{
-    width: 40px;
-}
-
-.page-button:hover
-{
-    cursor: pointer;
-}
 
 .episodes
 {
@@ -60,8 +27,8 @@ the-episodes > button
    justify-content: center;
    background: linear-gradient(315deg, #CF0A0A, black);
    color: black; 
-   width: 300px; 
-   height: 300px; 
+   max-width: 300px; 
+   max-height: 300px; 
    position: relative; 
 }
 
@@ -112,8 +79,10 @@ the-episodes > button
 }
 .episodeIMG
 {
-    width: 200px; 
-    height: 200px; 
+    min-width: 100px;
+    min-height: 100px; 
+    max-width: 200px; 
+    max-height: 200px; 
     align-self: center;
     z-index: 2; 
     opacity: 0.6;

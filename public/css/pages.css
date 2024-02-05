@@ -1,0 +1,34 @@
+.page-flex
+{
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0px; 
+    padding: 0px; 
+    gap: 30px;  
+    margin-bottom: 100px;
+}
+.page-flex > div
+{
+    font-family: 'Cloister Black', sans-serif;
+    background-color: black;
+    color: #CF0A0A;
+    align-items: center;
+    text-align: center;
+}
+.page-flex > div:hover
+{
+    scale: 1.1; 
+}
+
+.page-button
+{
+    max-width: 40px;
+}
+
+.page-button:hover
+{
+    cursor: pointer;
+}

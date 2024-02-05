@@ -13,45 +13,12 @@ the-characters
 } 
 the-characters > button
 {
-    width: 300px; 
-    height: 300px;
+    min-width: 200px; 
+    min-height: 200px;
+    max-width: 300px; 
+    max-height: 300px;
 }
 
-
-
-.page-flex
-{
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 0px; 
-    padding: 0px; 
-    gap: 30px; 
-    margin-bottom: 100px;
-}
-.page-flex > div
-{
-    font-family: 'Cloister Black', sans-serif;
-    background-color: black;
-    color: #CF0A0A;
-    align-items: center;
-    text-align: center;
-}
-.page-flex > div:hover
-{
-    scale: 1.1; 
-}
-
-.page-button
-{
-    width: 40px;
-}
-
-.page-button:hover
-{
-    cursor: pointer;
-}
 
 .characters
 {
@@ -61,8 +28,8 @@ the-characters > button
    align-items: center;
    background: linear-gradient(315deg, #CF0A0A, black);
    color: black; 
-   width: 300px; 
-   height: 300px; 
+   min-width: 300px; 
+   min-height: 300px; 
    position: relative;
 }
 
@@ -106,8 +73,10 @@ the-characters > button
 }
 .characterIMG
 {
-    width: 200px; 
-    height: 200px; 
+    min-width: 100px;
+    min-height: 100px; 
+    max-width: 200px; 
+    max-height: 200px;  
     align-self: center;
     z-index: 2; 
     opacity: 0.6;
@@ -123,19 +92,4 @@ the-characters > button
 .characterIMG:hover
 {
     opacity: 1; 
-}
-#mystery-photo
-{
-    z-index: 2; 
-    align-self: center;
-}
-
-#mystery-photo > a:link
-{
-    color: white; 
-}
-
-#mystery-photo > a:hover
-{
-    color: black;
 }

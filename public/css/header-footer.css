@@ -3,16 +3,21 @@ header, footer
     display: flex; 
     justify-content: flex-end;
     align-items: center;
+    flex-wrap: wrap;
     background-color: black;
     color: #CF0A0A;
-    width: 100vw; 
-    height: 15vh; 
+    min-width: 100vw; 
+    max-height: 25vh; 
     position: relative;
-    bottom: 8px;
-    gap: 25px; 
+    gap: 0px 25px; 
     font-size: 17pt;
     font-family: 'Black Ops One', system-ui;
     z-index: 3; 
+}
+
+header
+{
+    bottom: 8px;    
 }
 #menu-icon, #menu-icon-img
 {
@@ -20,14 +25,12 @@ header, footer
 }
 #dropdown-menu-flex
 {
-    display: flex; 
+    display: none; 
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    visibility: hidden;
+    align-items: flex-start;
     position: relative;
     align-self: flex-end;
-    left: 70px; 
 }
 #dropdown-menu
 {
@@ -36,21 +39,19 @@ header, footer
     justify-content: flex-start;
     align-items: center;
     background-color: black;
-    align-self: last-baseline;
+    align-self: flex-end;
     position: absolute; 
     visibility: hidden;
-    text-align: left; 
-    gap: 10px; 
-    top: 12px; 
+    text-align: right; 
+    top: 50px; 
+    gap: 4px; 
 }
 
 #dropdown-menu > div
 {
-    width: auto;  
-    height: auto; 
-    z-index: 3;
     background-color: white;
-    align-self: center
+    z-index: 3;
+    align-self: flex-start
 }
 footer
 {
@@ -61,7 +62,7 @@ footer
     top: 1px; 
     margin-top: auto; 
     margin-right: auto; 
-    height: 10vh;
+    min-height: 10vh;
 }
 .nav-link
 {
@@ -73,10 +74,12 @@ footer
     font-size: 30pt; 
     margin-bottom: 0px;
     margin-top: 0px; 
-    padding-left: 50px;
     margin-right: auto;
     text-align: center;     
     text-shadow: 2px 2px 2px white, 1px 1px 1px black;
+    align-self: flex-end;
+    max-width: 200px;
+    max-height: 200px;
                   
 }
 
@@ -84,17 +87,17 @@ a{
     padding-right: 10px;
 }
 
-a:link
+.nav-link > a:link
 {
     color: #CF0A0A;
 }
 
-a:visited
+.nav-link > a:visited
 {
     color: #CF0A0A;
 }
 
-a:hover
+.nav-link > a:hover
 {
     color: white; 
 }

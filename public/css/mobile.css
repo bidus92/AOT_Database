@@ -1,33 +1,78 @@
 
 /*Mobile functionality: */
-@media(max-width: 430px)
+@media(max-width: 1210px)
+{    
+    the-characters, the-organizations, the-episodes, the-locations
+    {
+        grid-template-columns: 31% 31% 31%;
+    }   
+}
+
+@media(max-width: 920px)
 {
-    header
+    the-characters, the-organizations, the-episodes, the-locations, the-titans
     {
-        justify-content: flex-start;
+        grid-template-columns: 48% 48%;
+    }  
+    .data-image
+    {
+        width: 700px; 
+        height: 700px; 
     }
-    
-    #title
+    the-data
     {
-        font-size: 20pt; 
+        justify-content: center;
+        align-items: center;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 0px;
     }
 
-    header, footer 
+    .database-information
     {
-        font-size: 12pt;
-        justify-content: flex-start;
-        flex-direction: row;
+        grid-area: 2/1/2/1; 
+        width: 100%;
+    }
+    .main-data-item-flex-container
+    {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }     
+    
+    .database-information > li
+    {
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
+    .data-category
+    {
+        align-self: center;
+    }
+}
+@media(max-width: 620px)
+{
+    the-characters, the-organizations, the-episodes, the-locations, the-titans
+    {
+        grid-template-columns: 100%;
+    }  
+
+    .data-image
+    {
+        width: 500px; 
+        height: 500px; 
+    }
+
     #dropdown-menu-flex
     {
-        visibility: visible;
+        display: flex;
     }
 
     #menu-icon-img
     {
-        width: 40px; 
-        height: 40px;  
+        min-width: 40px; 
+        min-height: 40px;  
         visibility: visible;
     }
 
@@ -45,17 +90,45 @@
         visibility: visible;
     }
 
+    .nav-link
+    {
+        display: none;
+    }
+}
+
+@media(max-width: 475px)
+{
+
+    .data-image
+    {
+        width: 300px; 
+        height: 300px; 
+    }
+    the
+    header
+    {
+        justify-content: flex-start;
+    }
     
+    #title
+    {
+        font-size: 20pt; 
+    }
+
+    header, footer 
+    {
+        font-size: 12pt;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+    }
 
 
     header
     {
         gap: 100px;
     }
-    .nav-link
-    {
-        visibility: hidden;
-    }
+
     #welcome
     {
         width: 300px; 
@@ -72,8 +145,6 @@
     {
         transform: translateY(-150px) translateX(200px);
         clip-path: inset(0px 180px 0px 0px); 
-        object-fit: cover;
-        
     }
     #reiner
     {

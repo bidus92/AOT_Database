@@ -2,10 +2,12 @@ body
 {
     display: flex; 
     flex-direction: column;
+    align-items: center;
     background-color: #DC5F00;
     overflow-x: hidden;
     position: absolute; 
-    height: 100%;
+    width: auto; 
+    height: 100vh;
     z-index: 0;
     margin: 0; 
     padding: 0; 
@@ -18,6 +20,10 @@ the-homepage
     align-items: center;
     position: relative; 
     width: 100vw;  
+    margin: 0; 
+    padding: 0; 
+    overflow: clip;
+  
 }
 
 #welcome
@@ -51,6 +57,32 @@ the-homepage
     margin: 0; 
     padding: 0; 
 }
+
+.mystery-photo
+{
+    z-index: 2; 
+    align-self: center; 
+}
+
+a.mystery-photo-link
+{
+    color: white;
+}
+a:visited.mystery-photo-link
+{
+    color: white;
+}
+
+a:link.mystery-photo-link
+{
+    color: white; 
+}
+
+a:hover.mystery-photo-link
+{
+    color: black;
+}
+
 
 
 

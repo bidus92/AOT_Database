@@ -7,7 +7,21 @@ window.addEventListener('scroll', ()=>
 {
     let value = window.scrollY; 
 
-    eren.style.marginRight = value * 1.002 + 'px'; 
-    reiner.style.marginLeft = value * 1.002 + 'px'; 
+    eren.style.marginRight = value * 350.002 + 'px'; 
+    reiner.style.marginLeft = value * 350.002 + 'px'; 
 
 });
+
+const width = screen.availWidth; 
+
+if(width <= 430)
+{
+    window.addEventListener('touchmove', ()=>
+    {
+        let value = window.scrollY; 
+    
+        eren.style.marginRight = value * 300.002 + 'px'; 
+        reiner.style.marginLeft = value * 300.002 + 'px'; 
+    
+    });
+}
