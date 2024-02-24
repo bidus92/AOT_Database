@@ -1,18 +1,16 @@
 header, footer
 {
     display: flex; 
-    justify-content: flex-end;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     background-color: black;
     color: #CF0A0A;
-    min-width: 100vw; 
-    max-height: 25vh; 
-    position: relative;
-    gap: 0px 25px; 
-    font-size: 17pt;
+    min-width: 100%; 
     font-family: 'Black Ops One', system-ui;
     z-index: 3; 
+    font-size: 14pt; 
 }
 
 header
@@ -55,36 +53,37 @@ header
 }
 footer
 {
-    justify-content: center;
-    align-self: center;
-    align-items: flex-end;
-    font-size: 15pt; 
-    top: 1px; 
     margin-top: auto; 
-    margin-right: auto; 
     min-height: 10vh;
 }
-.nav-link
+.header-nav-links, .footer-nav-links
 {
-    padding-right: 15px;
+    display: inline-flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+    width: auto; 
+    height: 100%; 
+}
+.header-nav-links
+{
+    margin-left: auto;
 }
 #title
 {
+    align-self: center;
+    display: inline-flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100%; 
     font-family: 'Cloister Black', sans-serif;
     font-size: 30pt; 
-    margin-bottom: 0px;
-    margin-top: 0px; 
     margin-right: auto;
     text-align: center;     
-    text-shadow: 2px 2px 2px white, 1px 1px 1px black;
-    align-self: flex-end;
-    max-width: 200px;
-    max-height: 200px;
-                  
-}
-
-a{
-    padding-right: 10px;
+    text-shadow: 2px 2px 2px white, 1px 1px 1px black;  
 }
 
 .nav-link > a:link

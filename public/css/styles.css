@@ -1,16 +1,19 @@
+*{
+    margin: 0; 
+    padding: 0; 
+}
+
 body
 {
     display: flex; 
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: #DC5F00;
     overflow-x: hidden;
     position: absolute; 
-    width: auto; 
+    width: 100vw; 
     height: 100vh;
-    z-index: 0;
-    margin: 0; 
-    padding: 0; 
 }
 
 the-homepage 
@@ -18,10 +21,8 @@ the-homepage
     display: flex; 
     justify-content: center;
     align-items: center;
-    position: relative; 
-    width: 100vw;  
-    margin: 0; 
-    padding: 0; 
+    position: relative;
+    width: 100%;  
     overflow: clip;
   
 }
