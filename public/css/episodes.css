@@ -1,4 +1,4 @@
-the-episodes
+.episode-grid
 {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
@@ -10,10 +10,9 @@ the-episodes
     position:relative;
     right: 5px; 
     bottom: 10px;
-
 } 
 
-the-episodes > button
+.episode-grid > button
 {
     max-width: 315px; 
     max-height: 315px; 

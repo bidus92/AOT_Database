@@ -7,8 +7,8 @@ window.addEventListener('scroll', ()=>
 {
     let value = window.scrollY; 
 
-    eren.style.marginRight = value * 350.002 + 'px'; 
-    reiner.style.marginLeft = value * 350.002 + 'px'; 
+    eren.style.marginRight = value * 5.002 + 'px'; 
+    reiner.style.marginLeft = value * 5.002 + 'px'; 
 
 });
 
@@ -20,8 +20,8 @@ if(width <= 430)
     {
         let value = window.scrollY; 
     
-        eren.style.marginRight = value * 300.002 + 'px'; 
-        reiner.style.marginLeft = value * 300.002 + 'px'; 
+        eren.style.marginRight = value * 5.002 + 'px'; 
+        reiner.style.marginLeft = value * 5.002 + 'px'; 
     
     });
 }

@@ -1,4 +1,4 @@
-header, footer
+the-header, the-footer
 {
     display: flex; 
     position: relative;
@@ -12,16 +12,17 @@ header, footer
     z-index: 3; 
     font-size: 14pt; 
 }
-
-header
+the-footer
 {
-    bottom: 8px;    
+    margin-top: auto; 
+    min-height: 15%;
 }
+
 #menu-icon, #menu-icon-img
 {
     visibility: hidden;
 }
-#dropdown-menu-flex
+#mobile-dropdown-menu-flex
 {
     display: none; 
     flex-direction: column;
@@ -32,7 +33,7 @@ header
 }
 #dropdown-menu
 {
-    display: flex; 
+    display: none; 
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -50,11 +51,6 @@ header
     background-color: white;
     z-index: 3;
     align-self: flex-start
-}
-footer
-{
-    margin-top: auto; 
-    min-height: 10vh;
 }
 .header-nav-links, .footer-nav-links
 {

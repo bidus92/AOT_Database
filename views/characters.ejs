@@ -1,54 +1,57 @@
-<%-include("include/header.ejs")%>
+<%-include("include/header.ejs")%> 
 
-<div class="page-numbers">
-    <form action="/characters" method="POST">
-        <div class="page-flex">
-        <%for(let x = 1; x <= 11; x++){%>
-            <div>
-                <label id="page-label" for="page">Page</label>
-                <button class="page-button" name="page" type="submit" value="<%=x%>"><%=x%></button>
-            </div>
-        <%}%>
-    </div>
-    </form>
-</div>
-
-<form action="/character-database" id="character-database" method="POST">
-<the-characters>  
-        <%for(let x = 0; x < locals.characterList.length; x++){%>
-            <button class="data-button" name="id" type="submit" value="<%=locals.characterList[x].id%>"><div class="characters">
-                <div class="character-name">
-                    <p><%=locals.characterList[x].name%></p>
-                </div>
-                <%if(locals.characterList[x].name === "Lima" || locals.characterList[x].name === "Muller"|| locals.characterList[x].name === "Alois Tybur" || locals.characterList[x].name === "Bruno Tybur" || locals.characterList[x].name === "Rico Tybur" || locals.characterList[x].name === "Marie Dawk"){%>
+    <div class="page-list">
+        <form action="/characters" method="POST">
+            <div class="page-flex">
+                <%for(let x = 1; x <= 11; x++){%>
                     <div>
+                        <label id="page-label" for="page">Page</label>
+                        <button class="page-button" name="page" type="submit" value="<%=x%>"><%=x%></button>
+                    </div>
+                <%}%>
+            </div>
+        </form>
+    </div>
+
+        <form action="/character-database" method="POST">
+            <the-characters class="character-grid">
+                <%for(let x = 0; x < locals.characterList.length; x++){%>
+                    <div>
+                        <button class="data-button" name="id" type="submit" value="<%=locals.characterList[x].id%>"> <div class="characters">
+                            <div class="character-name">
+                                <p><%=locals.characterList[x].name%></p>
+                            </div>
+                            <%if(locals.characterList[x].name === "Lima" || locals.characterList[x].name === "Muller"|| locals.characterList[x].name === "Alois Tybur" || locals.characterList[x].name === "Bruno Tybur" || locals.characterList[x].name === "Rico Tybur" || locals.characterList[x].name === "Marie Dawk"){%>
+                                <div>
+                                    <b></b>
+                                </div>
+                                <div class="mystery-photo">
+                                    <img class="characterIMG" src="/assets/images/question_mark.jpg" alt="A question mark"/>
+                                </div>
+                                <div class="mystery-photo">
+                                    <p>Photo by <a class="mystery-photo-link" href="https://unsplash.com/@simonesecci?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Simone Secci</a> 
+                                        on <a class="mystery-photo-link" href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                                    </p>
+                                </div>
+                            <%}%>
+                    <%let imgURL = locals.characterList[x].img;%>
+                    <%if(locals.characterList[x].name === "Florian Reiss"){%>
                         <b></b>
-                    </div>
-                    <div class="mystery-photo">
-                        <img class="characterIMG" src="/assets/images/question_mark.jpg" alt="A question mark"/>
-                    </div>
-                    <div class="mystery-photo">
-                        <p>Photo by <a class="mystery-photo-link" href="https://unsplash.com/@simonesecci?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Simone Secci</a> 
-                            on <a class="mystery-photo-link" href="https://unsplash.com/photos/red-letters-neon-light-49uySSA678U?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-                        </p>
-                    </div>
-        <%}%>
-        <%let imgURL = locals.characterList[x].img;%>
-        <%if(locals.characterList[x].name === "Florian Reiss"){%>
-            <b></b>
-            <%imgURL = imgURL.replace("revision/latest?cb=", "")%>
-            <%imgURL = imgURL.slice(0, imgURL.length-15);%>
-            <img class="characterIMG" src="<%=imgURL%>" alt="<%=locals.characterList[x].name%>"/>
+                        <%imgURL = imgURL.replace("revision/latest?cb=", "")%>
+                        <%imgURL = imgURL.slice(0, imgURL.length-15);%>
+                        <img class="characterIMG" src="<%=imgURL%>" alt="<%=locals.characterList[x].name%>"/>
+                        <%}%>
+                    <%if(locals.characterList[x].img && locals.characterList[x].name !== "Florian Reiss" && locals.characterList[x].name !== "Muller"){%>
+                        <b></b>
+                        <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
+                        <%imgURL = imgURL.slice(0, imgURL.length-15);%>
+                        <%//console.log(imgURL);%>
+                        <img class="characterIMG" src="<%=imgURL%>" alt="<%=locals.characterList[x].name%>"/>
+                        <%}%>
+                </button>
+            </div>
             <%}%>
-        <%if(locals.characterList[x].img && locals.characterList[x].name !== "Florian Reiss" && locals.characterList[x].name !== "Muller"){%>
-            <b></b>
-            <%imgURL = imgURL.replace("revision/latest/scale-to-width-down/350?cb=", "")%>
-            <%imgURL = imgURL.slice(0, imgURL.length-15);%>
-            <%//console.log(imgURL);%>
-            <img class="characterIMG" src="<%=imgURL%>" alt="<%=locals.characterList[x].name%>"/>
-            <%}%>
-    </div></button>
-    <%}%>
-</the-characters>
-</form>
+            </the-characters>
+        </div>
+        </form>
 <%-include("include/footer.ejs")%>

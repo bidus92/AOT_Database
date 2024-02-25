@@ -14,7 +14,7 @@
 </div>
 
 <form action="/episode-database" method="POST">
-<the-episodes>
+<the-episodes class="episode-grid">
     <%for(let x = 0; x < locals.episodeList.length; x++){%>
         <button class="data-button" name="id" type="submit" value="<%=locals.episodeList[x].id%>"> <div class="episodes">
         <p class="episode"><%=locals.episodeList[x].episode%></p>

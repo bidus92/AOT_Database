@@ -1,14 +1,23 @@
+.page-list
+{
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative; 
+    width: 100%; 
+    margin-top: 5px;
+}
+
 .page-flex
 {
     display: flex; 
     flex-direction: row;
     justify-content: center;
+    position: relative;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0px; 
-    padding: 0px; 
-    gap: 30px;  
-    margin-bottom: 100px;
+    gap: 30px; 
 }
 .page-flex > div
 {

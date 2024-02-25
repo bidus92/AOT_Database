@@ -1,6 +1,6 @@
 
 /*Mobile functionality: */
-@media(max-width: 1210px)
+/* @media(max-width: 1210px)
 {    
     the-characters, the-organizations, the-episodes, the-locations
     {
@@ -151,4 +151,4 @@
         transform: translateY(-150px) translateX(-250px);
         clip-path: inset(0px 0px 0px 250px); 
     }
-}
+} */
